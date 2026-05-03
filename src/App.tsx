@@ -1,0 +1,310 @@
+import { Switch, Route, Redirect } from "wouter";
+import { useHashLocation } from "wouter/use-hash-location";
+import { Router } from "wouter";
+import { AppLayout } from "@/components/layout/AppLayout";
+import Home from "@/pages/Home";
+import NotFound from "@/pages/NotFound";
+import HelloExplicado from "@/pages/HelloExplicado";
+import HistoriaDart from "@/pages/HistoriaDart";
+import DartVsOutras from "@/pages/DartVsOutras";
+import DartVmAot from "@/pages/DartVmAot";
+import InstalacaoSdk from "@/pages/InstalacaoSdk";
+import DartCli from "@/pages/DartCli";
+import PrimeiroPrograma from "@/pages/PrimeiroPrograma";
+import PubspecYaml from "@/pages/PubspecYaml";
+import PackagesPub from "@/pages/PackagesPub";
+import IdeVscodeAndroidstudio from "@/pages/IdeVscodeAndroidstudio";
+import DebugBasico from "@/pages/DebugBasico";
+import BuildRun from "@/pages/BuildRun";
+import DocComentarios from "@/pages/DocComentarios";
+import VariaveisTipos from "@/pages/VariaveisTipos";
+import VarFinalConst from "@/pages/VarFinalConst";
+import TiposPrimitivos from "@/pages/TiposPrimitivos";
+import StringsFundamentos from "@/pages/StringsFundamentos";
+import Operadores from "@/pages/Operadores";
+import ConversoesParse from "@/pages/ConversoesParse";
+import CondicionaisIf from "@/pages/CondicionaisIf";
+import Loops from "@/pages/Loops";
+import ListasArrays from "@/pages/ListasArrays";
+import Maps from "@/pages/Maps";
+import Sets from "@/pages/Sets";
+import ConsoleIo from "@/pages/ConsoleIo";
+import FuncoesBasico from "@/pages/FuncoesBasico";
+import ParametrosNamed from "@/pages/ParametrosNamed";
+import ParametrosPositional from "@/pages/ParametrosPositional";
+import DefaultValues from "@/pages/DefaultValues";
+import ArrowFunctions from "@/pages/ArrowFunctions";
+import Closures from "@/pages/Closures";
+import Recursao from "@/pages/Recursao";
+import HigherOrder from "@/pages/HigherOrder";
+import Typedef from "@/pages/Typedef";
+import GenericsFuncoes from "@/pages/GenericsFuncoes";
+import FuncoesAnonimas from "@/pages/FuncoesAnonimas";
+import FuncoesAsyncIntro from "@/pages/FuncoesAsyncIntro";
+import ClassesObjetos from "@/pages/ClassesObjetos";
+import PropriedadesGettersSetters from "@/pages/PropriedadesGettersSetters";
+import Construtores from "@/pages/Construtores";
+import NamedConstructors from "@/pages/NamedConstructors";
+import ThisKeyword from "@/pages/ThisKeyword";
+import Factories from "@/pages/Factories";
+import HerancaExtends from "@/pages/HerancaExtends";
+import AbstractClasses from "@/pages/AbstractClasses";
+import InterfacesImplements from "@/pages/InterfacesImplements";
+import Mixins from "@/pages/Mixins";
+import ExtensionMethods from "@/pages/ExtensionMethods";
+import OperatorOverloading from "@/pages/OperatorOverloading";
+import NullSafety from "@/pages/NullSafety";
+import NullableTypes from "@/pages/NullableTypes";
+import LateKeyword from "@/pages/LateKeyword";
+import SoundTypes from "@/pages/SoundTypes";
+import TypePromotion from "@/pages/TypePromotion";
+import DynamicVsObject from "@/pages/DynamicVsObject";
+import GenericsClasses from "@/pages/GenericsClasses";
+import GenericsBounds from "@/pages/GenericsBounds";
+import Records from "@/pages/Records";
+import Patterns from "@/pages/Patterns";
+import SwitchExpressions from "@/pages/SwitchExpressions";
+import SealedClasses from "@/pages/SealedClasses";
+import ListDetalhado from "@/pages/ListDetalhado";
+import MapDetalhado from "@/pages/MapDetalhado";
+import SetDetalhado from "@/pages/SetDetalhado";
+import IterableBase from "@/pages/IterableBase";
+import WhereMapTolist from "@/pages/WhereMapTolist";
+import FoldReduce from "@/pages/FoldReduce";
+import SortComparator from "@/pages/SortComparator";
+import QueueStack from "@/pages/QueueStack";
+import LinkedHashMap from "@/pages/LinkedHashMap";
+import ComparableComparator from "@/pages/ComparableComparator";
+import CollectionIfFor from "@/pages/CollectionIfFor";
+import GeneratorsSyncAsync from "@/pages/GeneratorsSyncAsync";
+import FutureBasico from "@/pages/FutureBasico";
+import AsyncAwait from "@/pages/AsyncAwait";
+import FutureCompleter from "@/pages/FutureCompleter";
+import FutureThenCatchError from "@/pages/FutureThenCatchError";
+import Futureor from "@/pages/Futureor";
+import StreamsIntro from "@/pages/StreamsIntro";
+import StreamController from "@/pages/StreamController";
+import StreamBroadcast from "@/pages/StreamBroadcast";
+import StreamTransformations from "@/pages/StreamTransformations";
+import AsyncIterable from "@/pages/AsyncIterable";
+import Isolates from "@/pages/Isolates";
+import IsolatePool from "@/pages/IsolatePool";
+import ExceptionsVsErrors from "@/pages/ExceptionsVsErrors";
+import TryCatch from "@/pages/TryCatch";
+import Throw from "@/pages/Throw";
+import CustomExceptions from "@/pages/CustomExceptions";
+import FinallyFlow from "@/pages/FinallyFlow";
+import StackTraces from "@/pages/StackTraces";
+import AssertDebug from "@/pages/AssertDebug";
+import DartIoIntro from "@/pages/DartIoIntro";
+import FileReadWrite from "@/pages/FileReadWrite";
+import DirectoryFs from "@/pages/DirectoryFs";
+import HttpClientDart from "@/pages/HttpClientDart";
+import JsonEncodeDecode from "@/pages/JsonEncodeDecode";
+import TestPackage from "@/pages/TestPackage";
+import Mocktail from "@/pages/Mocktail";
+import IntegrationTest from "@/pages/IntegrationTest";
+import TestAsync from "@/pages/TestAsync";
+import DartFormat from "@/pages/DartFormat";
+import DartAnalyze from "@/pages/DartAnalyze";
+import DartFix from "@/pages/DartFix";
+import BuildRunner from "@/pages/BuildRunner";
+import Freezed from "@/pages/Freezed";
+import FfiBasico from "@/pages/FfiBasico";
+import FlutterIntro from "@/pages/FlutterIntro";
+import FlutterInstalacao from "@/pages/FlutterInstalacao";
+import WidgetsFundamentais from "@/pages/WidgetsFundamentais";
+import StatelessStateful from "@/pages/StatelessStateful";
+import LayoutRowColumn from "@/pages/LayoutRowColumn";
+import ContainerPadding from "@/pages/ContainerPadding";
+import Listview from "@/pages/Listview";
+import NavigatorPush from "@/pages/NavigatorPush";
+import ThemeMaterial from "@/pages/ThemeMaterial";
+import HotReload from "@/pages/HotReload";
+import AssetsImages from "@/pages/AssetsImages";
+import GesturesBasico from "@/pages/GesturesBasico";
+import AnimationsBasico from "@/pages/AnimationsBasico";
+import InheritedWidget from "@/pages/InheritedWidget";
+import Provider from "@/pages/Provider";
+import Riverpod from "@/pages/Riverpod";
+import Bloc from "@/pages/Bloc";
+import HttpFlutter from "@/pages/HttpFlutter";
+import Sqflite from "@/pages/Sqflite";
+import SharedPrefs from "@/pages/SharedPrefs";
+import Slivers from "@/pages/Slivers";
+import CustomPainter from "@/pages/CustomPainter";
+import PlatformChannels from "@/pages/PlatformChannels";
+import PerformanceFlutter from "@/pages/PerformanceFlutter";
+import DeployAndroidIos from "@/pages/DeployAndroidIos";
+import ProjetoFinalTodoApp from "@/pages/ProjetoFinalTodoApp";
+import DartWeb from "@/pages/DartWeb";
+import FlutterWeb from "@/pages/FlutterWeb";
+import DartCliApps from "@/pages/DartCliApps";
+import DartHttpServer from "@/pages/DartHttpServer";
+import WebsocketsDart from "@/pages/WebsocketsDart";
+import GrpcDart from "@/pages/GrpcDart";
+import DartFunctions from "@/pages/DartFunctions";
+import DartServerpod from "@/pages/DartServerpod";
+import DartFrog from "@/pages/DartFrog";
+import BenchmarkDart from "@/pages/BenchmarkDart";
+import NullSafetyMigration from "@/pages/NullSafetyMigration";
+import DartCheatsheet from "@/pages/DartCheatsheet";
+
+export default function App() {
+  return (
+    <Router hook={useHashLocation}>
+      <AppLayout>
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route path="/hello-explicado" component={HelloExplicado} />
+          <Route path="/historia-dart" component={HistoriaDart} />
+          <Route path="/dart-vs-outras" component={DartVsOutras} />
+          <Route path="/dart-vm-aot" component={DartVmAot} />
+          <Route path="/instalacao-sdk" component={InstalacaoSdk} />
+          <Route path="/dart-cli" component={DartCli} />
+          <Route path="/primeiro-programa" component={PrimeiroPrograma} />
+          <Route path="/pubspec-yaml" component={PubspecYaml} />
+          <Route path="/packages-pub" component={PackagesPub} />
+          <Route path="/ide-vscode-androidstudio" component={IdeVscodeAndroidstudio} />
+          <Route path="/debug-basico" component={DebugBasico} />
+          <Route path="/build-run" component={BuildRun} />
+          <Route path="/doc-comentarios" component={DocComentarios} />
+          <Route path="/variaveis-tipos" component={VariaveisTipos} />
+          <Route path="/var-final-const" component={VarFinalConst} />
+          <Route path="/tipos-primitivos" component={TiposPrimitivos} />
+          <Route path="/strings-fundamentos" component={StringsFundamentos} />
+          <Route path="/operadores" component={Operadores} />
+          <Route path="/conversoes-parse" component={ConversoesParse} />
+          <Route path="/condicionais-if" component={CondicionaisIf} />
+          <Route path="/loops" component={Loops} />
+          <Route path="/listas-arrays" component={ListasArrays} />
+          <Route path="/maps" component={Maps} />
+          <Route path="/sets" component={Sets} />
+          <Route path="/console-io" component={ConsoleIo} />
+          <Route path="/funcoes-basico" component={FuncoesBasico} />
+          <Route path="/parametros-named" component={ParametrosNamed} />
+          <Route path="/parametros-positional" component={ParametrosPositional} />
+          <Route path="/default-values" component={DefaultValues} />
+          <Route path="/arrow-functions" component={ArrowFunctions} />
+          <Route path="/closures" component={Closures} />
+          <Route path="/recursao" component={Recursao} />
+          <Route path="/higher-order" component={HigherOrder} />
+          <Route path="/typedef" component={Typedef} />
+          <Route path="/generics-funcoes" component={GenericsFuncoes} />
+          <Route path="/funcoes-anonimas" component={FuncoesAnonimas} />
+          <Route path="/funcoes-async-intro" component={FuncoesAsyncIntro} />
+          <Route path="/classes-objetos" component={ClassesObjetos} />
+          <Route path="/propriedades-getters-setters" component={PropriedadesGettersSetters} />
+          <Route path="/construtores" component={Construtores} />
+          <Route path="/named-constructors" component={NamedConstructors} />
+          <Route path="/this-keyword" component={ThisKeyword} />
+          <Route path="/factories" component={Factories} />
+          <Route path="/heranca-extends" component={HerancaExtends} />
+          <Route path="/abstract-classes" component={AbstractClasses} />
+          <Route path="/interfaces-implements" component={InterfacesImplements} />
+          <Route path="/mixins" component={Mixins} />
+          <Route path="/extension-methods" component={ExtensionMethods} />
+          <Route path="/operator-overloading" component={OperatorOverloading} />
+          <Route path="/null-safety" component={NullSafety} />
+          <Route path="/nullable-types" component={NullableTypes} />
+          <Route path="/late-keyword" component={LateKeyword} />
+          <Route path="/sound-types" component={SoundTypes} />
+          <Route path="/type-promotion" component={TypePromotion} />
+          <Route path="/dynamic-vs-object" component={DynamicVsObject} />
+          <Route path="/generics-classes" component={GenericsClasses} />
+          <Route path="/generics-bounds" component={GenericsBounds} />
+          <Route path="/records" component={Records} />
+          <Route path="/patterns" component={Patterns} />
+          <Route path="/switch-expressions" component={SwitchExpressions} />
+          <Route path="/sealed-classes" component={SealedClasses} />
+          <Route path="/list-detalhado" component={ListDetalhado} />
+          <Route path="/map-detalhado" component={MapDetalhado} />
+          <Route path="/set-detalhado" component={SetDetalhado} />
+          <Route path="/iterable-base" component={IterableBase} />
+          <Route path="/where-map-tolist" component={WhereMapTolist} />
+          <Route path="/fold-reduce" component={FoldReduce} />
+          <Route path="/sort-comparator" component={SortComparator} />
+          <Route path="/queue-stack" component={QueueStack} />
+          <Route path="/linked-hash-map" component={LinkedHashMap} />
+          <Route path="/comparable-comparator" component={ComparableComparator} />
+          <Route path="/collection-if-for" component={CollectionIfFor} />
+          <Route path="/generators-sync-async" component={GeneratorsSyncAsync} />
+          <Route path="/future-basico" component={FutureBasico} />
+          <Route path="/async-await" component={AsyncAwait} />
+          <Route path="/future-completer" component={FutureCompleter} />
+          <Route path="/future-then-catch-error" component={FutureThenCatchError} />
+          <Route path="/futureor" component={Futureor} />
+          <Route path="/streams-intro" component={StreamsIntro} />
+          <Route path="/stream-controller" component={StreamController} />
+          <Route path="/stream-broadcast" component={StreamBroadcast} />
+          <Route path="/stream-transformations" component={StreamTransformations} />
+          <Route path="/async-iterable" component={AsyncIterable} />
+          <Route path="/isolates" component={Isolates} />
+          <Route path="/isolate-pool" component={IsolatePool} />
+          <Route path="/exceptions-vs-errors" component={ExceptionsVsErrors} />
+          <Route path="/try-catch" component={TryCatch} />
+          <Route path="/throw" component={Throw} />
+          <Route path="/custom-exceptions" component={CustomExceptions} />
+          <Route path="/finally-flow" component={FinallyFlow} />
+          <Route path="/stack-traces" component={StackTraces} />
+          <Route path="/assert-debug" component={AssertDebug} />
+          <Route path="/dart-io-intro" component={DartIoIntro} />
+          <Route path="/file-read-write" component={FileReadWrite} />
+          <Route path="/directory-fs" component={DirectoryFs} />
+          <Route path="/http-client-dart" component={HttpClientDart} />
+          <Route path="/json-encode-decode" component={JsonEncodeDecode} />
+          <Route path="/test-package" component={TestPackage} />
+          <Route path="/mocktail" component={Mocktail} />
+          <Route path="/integration-test" component={IntegrationTest} />
+          <Route path="/test-async" component={TestAsync} />
+          <Route path="/dart-format" component={DartFormat} />
+          <Route path="/dart-analyze" component={DartAnalyze} />
+          <Route path="/dart-fix" component={DartFix} />
+          <Route path="/build-runner" component={BuildRunner} />
+          <Route path="/freezed" component={Freezed} />
+          <Route path="/ffi-basico" component={FfiBasico} />
+          <Route path="/flutter-intro" component={FlutterIntro} />
+          <Route path="/flutter-instalacao" component={FlutterInstalacao} />
+          <Route path="/widgets-fundamentais" component={WidgetsFundamentais} />
+          <Route path="/stateless-stateful" component={StatelessStateful} />
+          <Route path="/layout-row-column" component={LayoutRowColumn} />
+          <Route path="/container-padding" component={ContainerPadding} />
+          <Route path="/listview" component={Listview} />
+          <Route path="/navigator-push" component={NavigatorPush} />
+          <Route path="/theme-material" component={ThemeMaterial} />
+          <Route path="/hot-reload" component={HotReload} />
+          <Route path="/assets-images" component={AssetsImages} />
+          <Route path="/gestures-basico" component={GesturesBasico} />
+          <Route path="/animations-basico" component={AnimationsBasico} />
+          <Route path="/inherited-widget" component={InheritedWidget} />
+          <Route path="/provider" component={Provider} />
+          <Route path="/riverpod" component={Riverpod} />
+          <Route path="/bloc" component={Bloc} />
+          <Route path="/http-flutter" component={HttpFlutter} />
+          <Route path="/sqflite" component={Sqflite} />
+          <Route path="/shared-prefs" component={SharedPrefs} />
+          <Route path="/slivers" component={Slivers} />
+          <Route path="/custom-painter" component={CustomPainter} />
+          <Route path="/platform-channels" component={PlatformChannels} />
+          <Route path="/performance-flutter" component={PerformanceFlutter} />
+          <Route path="/deploy-android-ios" component={DeployAndroidIos} />
+          <Route path="/projeto-final-todo-app" component={ProjetoFinalTodoApp} />
+          <Route path="/dart-web" component={DartWeb} />
+          <Route path="/flutter-web" component={FlutterWeb} />
+          <Route path="/dart-cli-apps" component={DartCliApps} />
+          <Route path="/dart-http-server" component={DartHttpServer} />
+          <Route path="/websockets-dart" component={WebsocketsDart} />
+          <Route path="/grpc-dart" component={GrpcDart} />
+          <Route path="/dart-functions" component={DartFunctions} />
+          <Route path="/dart-serverpod" component={DartServerpod} />
+          <Route path="/dart-frog" component={DartFrog} />
+          <Route path="/benchmark-dart" component={BenchmarkDart} />
+          <Route path="/null-safety-migration" component={NullSafetyMigration} />
+          <Route path="/dart-cheatsheet" component={DartCheatsheet} />
+          <Route path="/404" component={NotFound} />
+          <Route><Redirect to="/404" /></Route>
+        </Switch>
+      </AppLayout>
+    </Router>
+  );
+}
